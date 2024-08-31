@@ -6,7 +6,7 @@ It is suggested to have a dedicated virtual environment for each Django project,
 
 Windows:
 
-        py -m venv myworld
+    py -m venv myworld
 
 Unix/MacOS:
 
@@ -53,7 +53,7 @@ To configure the database settings in your Django project. Open the settings.py 
         }
     }
 
-Suppose i want to connect database 'mysql'. So i need to change according to this...
+Suppose i want to connect database **mysql**. So i need to change according to this...
 
     DATABASES = {
         'default': {
