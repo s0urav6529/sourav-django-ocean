@@ -38,4 +38,25 @@ or windows
 
     py manage.py migrate
 
-This will create all the necessary tables for your Django project.
+This will create all the necessary default tables for your Django project.
+
+#### create a table
+
+    from django.db import models
+
+    class Person(models.Model):
+        name = models.CharField(max_length=100)
+        age = models.IntegerField()
+
+        def __str__(self):
+            return self.name
+
+The **str** method is used to display the name of the person instead of its object ID.
+
+To use this model, you need to create a new migration:
+
+    py manage.py makemigrations
+
+This will generate a new migration file that contains the changes made to your models. You can then apply the migration using:
+
+    py manage.py migrate
