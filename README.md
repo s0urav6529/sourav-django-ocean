@@ -40,7 +40,7 @@ Unix/MacOS:
 
 #### Can check if Django is installed by asking for its version number like this:
 
-    (myworld) C:\Users\Your Name>django-admin --version
+    django-admin --version
 
 ### Configure the Database Settings
 
