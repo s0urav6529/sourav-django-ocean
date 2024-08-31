@@ -42,6 +42,48 @@ Unix/MacOS:
 
     django-admin --version
 
+### Django Create Project
+
+    django-admin startproject my_first_project
+
+Django creates a **my_first_project** folder on my computer, with this content:
+
+    my_tennis_club
+        manage.py
+        my_tennis_club/
+            __init__.py
+            asgi.py
+            settings.py
+            urls.py
+            wsgi.py
+
+#### Run the Django Project
+
+Navigate to the /**my_first_project** folder and execute this command in the command prompt:
+
+    py manage.py runserver
+
+### Django Create App
+
+You should be in the virtual enviroment.Then run the command.
+
+    py manage.py startapp myapp
+
+Django creates a folder named **myapp** in my project, with this content:
+
+    my_first_project
+        manage.py
+        my_first_project/
+        myapp/
+            migrations/
+                __init__.py
+            __init__.py
+            admin.py
+            apps.py
+            models.py
+            tests.py
+            views.py
+
 ### Configure the Database Settings
 
 To configure the database settings in your Django project. Open the settings.py file in your project directory and find the DATABASES section. You should see something like this:
