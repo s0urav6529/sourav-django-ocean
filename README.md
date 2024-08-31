@@ -100,9 +100,9 @@ Suppose i want to connect database **mysql**. So i need to change according to t
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'database_name',
-            'USER': 'database_user',
-            'PASSWORD': 'database_password',
+            'NAME': '<database_name>',
+            'USER': 'root',
+            'PASSWORD': '',
             'HOST': 'localhost',
             'PORT': '3306',
         }
