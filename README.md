@@ -16,7 +16,7 @@ Then you have to activate the environment, by typing this command:
 
 Windows:
 
-    myworld\Scripts\activate.bat
+    myworld\Scripts\activate
 
 Unix/MacOS:
 
