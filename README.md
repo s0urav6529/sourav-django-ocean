@@ -32,11 +32,11 @@ After activation of 'venv' then need to install Django.Django is installed using
 
 Windows:
 
-    (myworld) C:\Users\Your Name> py -m pip install Django
+    py -m pip install Django
 
 Unix/MacOS:
 
-    (myworld) ... $ python -m pip install Django
+    python -m pip install Django
 
 #### Can check if Django is installed by asking for its version number like this:
 
