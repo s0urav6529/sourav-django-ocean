@@ -10,7 +10,7 @@ Django basically follows **MVT** structure.
 
 ### Virtual Environment
 
-It is suggested to have a dedicated virtual environment for each Django project, and one way to manage a virtual environment is venv, which is included in Python.
+It is suggested to have a dedicated virtual environment for each Django project, and one way to manage a virtual environment is venv, which is included in Python.It's better to have a separate **venv** for every particular project.
 
 Windows:
 
@@ -69,6 +69,8 @@ Django creates a **my_first_project** folder on my computer, with this content:
             urls.py
             wsgi.py
 
+Here, we have a manage.py file.Which is use for run this project in the webserver.
+
 #### Run the Django Project
 
 Navigate to the /**my_first_project** folder and execute this command in the command prompt:
@@ -77,9 +79,9 @@ Navigate to the /**my_first_project** folder and execute this command in the com
 
 ### Django Create App
 
-You should be in the virtual enviroment.Then run the command.
+You should be in the **project folder** to make an app for the project.Then run the command.
 
-    py manage.py startapp myapp
+    py manage.py startapp <app_name(suppose)> myapp
 
 Django creates a folder named **myapp** in my project, with this content:
 
