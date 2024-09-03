@@ -253,3 +253,14 @@ Template folder always be in outer folder of **my_first_project/templates/**. Af
     import os
 
     TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
+
+After create **TEMPLATE_DIR** register in TEMPLATES list.
+
+    TEMPLATES = [
+        {
+            .....
+            'DIRS': [TEMPLATE_DIR],
+            'APP_DIRS': True,
+            .....
+        },
+    ]
