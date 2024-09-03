@@ -245,3 +245,11 @@ To use this model, you need to create a new migration:
 This will generate a new migration file that contains the changes made to your models. You can then apply the migration using:
 
     py manage.py migrate
+
+### Templates
+
+Template folder always be in outer folder of **my_first_project/templates/**. After creating this folder, we need to register this folder in the inner folder of **my_first_project/settings.py**. Then write this below **BASE_DIR**
+
+    import os
+
+    TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
