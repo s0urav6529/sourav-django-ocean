@@ -98,6 +98,22 @@ Django creates a folder named **myapp** in my project, with this content:
             tests.py
             views.py
 
+After creating the **myapp** we need to register this app in main **project**. So that the project can recognize the app easily.
+
+For this we need to go **project_innner_folder/setting.py** then register in the **INSTALLED_APPS** list.
+
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+
+        **created external apps**
+        'myapp',
+    ]
+
 ### Configure the Database Settings
 
 To configure the database settings in your Django project. Open the settings.py file in your project directory and find the DATABASES section. You should see something like this:
