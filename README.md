@@ -42,6 +42,10 @@ Unix/MacOS:
 
     django-admin --version
 
+#### If problem with mariadb
+
+    pip install 'django<4'
+
 ### Django Create Project
 
     django-admin startproject my_first_project
