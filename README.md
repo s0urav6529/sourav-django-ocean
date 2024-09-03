@@ -81,7 +81,7 @@ Navigate to the /**my_first_project** folder and execute this command in the com
 
 You should be in the **project folder** to make an app for the project.Then run the command.
 
-    py manage.py startapp <app_name(suppose)> myapp
+    py manage.py startapp myapp
 
 Django creates a folder named **myapp** in my project, with this content:
 
