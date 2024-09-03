@@ -1,5 +1,11 @@
 # Documentation
 
+### Work flow of Django
+
+Django basically follows **MVT** structure.
+
+![Screenshot 2024-09-03 135709](https://github.com/user-attachments/assets/2a5770cd-1bf0-4851-80fb-d32c937593ce)
+
 ### Virtual Environment
 
 It is suggested to have a dedicated virtual environment for each Django project, and one way to manage a virtual environment is venv, which is included in Python.
