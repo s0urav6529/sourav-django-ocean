@@ -110,21 +110,9 @@ Suppose i want to connect database **mysql**. So i need to change according to t
 
 Here, replace database_name, database_user, and database_password with your own values.
 
-### Create Database Tables
+### Create Database Tables/Models
 
-After configuring the database settings, you need to create the database tables.
-
-In linux
-
-    python manage.py migrate
-
-or windows
-
-    py manage.py migrate
-
-This will create all the necessary default tables for your Django project.
-
-#### create a table
+For creating a database table/model in django follow the rules...
 
     from django.db import models
 
