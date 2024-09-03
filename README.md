@@ -163,6 +163,38 @@ Now go to **my_first_project/url.py** file register those views path
         path('student2/', subject2),
     ]
 
+This looks so messy. so for ignoring this extrame code writting condition, we nedd to create a **urls.py** file in every app. Then just link the file in the main project **urls.py**
+
+In **teacher.urls.py** file
+
+    from django.urls import path
+    from . import views
+
+    urlpatterns = [
+        path('', views.course),
+        path('2/', views.course2),
+    ]
+
+In **student.urls.py** file
+
+    from django.urls import path
+    from . import views
+
+    urlpatterns = [
+        path('', views.subject),
+        path('2/', views.subject2),
+    ]
+
+In **my_first_project.urls.py** file
+
+    from django.urls import path, include
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('teacher/', include('teacher.urls')),
+        path('student/', include('student.urls')),
+    ]
+
 ### Configure the Database Settings
 
 To configure the database settings in your Django project. Open the settings.py file in your project directory and find the DATABASES section. You should see something like this:
