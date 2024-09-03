@@ -81,14 +81,14 @@ Navigate to the /**my_first_project** folder and execute this command in the com
 
 You should be in the **project folder** to make an app for the project.Then run the command.
 
-    py manage.py startapp myapp
+    py manage.py startapp teacher
 
-Django creates a folder named **myapp** in my project, with this content:
+Django creates a folder named **teacher** in my project, with this content:
 
     my_first_project
         manage.py
         my_first_project/
-        myapp/
+        teacher/
             migrations/
                 __init__.py
             __init__.py
@@ -98,7 +98,7 @@ Django creates a folder named **myapp** in my project, with this content:
             tests.py
             views.py
 
-After creating the **myapp** we need to register this app in main **project**. So that the project can recognize the app easily.
+After creating the **teacher** we need to register this app in main **project**. So that the project can recognize the app easily.
 
 For this we need to go **project_innner_folder/setting.py** then register in the **INSTALLED_APPS** list.
 
@@ -111,7 +111,56 @@ For this we need to go **project_innner_folder/setting.py** then register in the
         'django.contrib.staticfiles',
 
         **created external apps**
-        'myapp',
+        'teacher',
+        'student',
+    ]
+
+### Create view in every app
+
+Now go to the **teacher/views.py** file & define functions
+
+    def course(request) :
+        return HttpResponse('Welcome to teacher course that conducted')
+
+    def course2(request) :
+        return HttpResponse('Welcome to teacher course2 that conducted')
+
+Again go to **student/views.py** file & define functions
+
+    def subject(request) :
+        return HttpResponse('Welcome to student subject that a student complete in class')
+
+    def subject2(request) :
+        return HttpResponse('Welcome to student subject2 that a student complete in class')
+
+### Create url to use views from apps
+
+Now go to **my_first_project/url.py** file register those views path
+
+#### Type 1 : rename views
+
+    from teacher import views as teacher_views
+    from student import views as student_views
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('teacher/', teacher_views.course),
+        path('teacher2/', teacher_views.course2),
+        path('student/', student_views.subject),
+        path('student2/', student_views.subject2),
+    ]
+
+#### Type 2 : import directly functions
+
+    from teacher.views import course, course2
+    from student.views import subject, student2
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('teacher/', course),
+        path('teacher2/', course2),
+        path('student/', subject),
+        path('student2/', subject2),
     ]
 
 ### Configure the Database Settings
