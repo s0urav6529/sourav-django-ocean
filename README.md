@@ -308,3 +308,15 @@ In Django templates,using tags you can perform programming logic like executing 
 For more details
 
     https://www.w3schools.com/django/django_template_tags.php
+
+#### Static Folder
+
+Django use static folder for (css,js & image etc). So similarly as template folder, need to crate a folder static folder in outer **my_first_project/static**.
+After that we need to register this folder in the **settings.py** file.
+
+    STATIC_DIR = os.path.join(BASE_DIR,'static')
+
+After create **STATIC_DIR** register in **STATICFILES_DIRS** list.
+
+    STATIC_URL = 'static/'
+    STATICFILES_DIRS = [ STATIC_DIR, ]
