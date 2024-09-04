@@ -289,3 +289,13 @@ Django Template Engine provides filters which are used to transform the values o
 Major Template Filters in Django link.
 
     https://www.geeksforgeeks.org/django-template-filters/
+
+#### Tags
+
+In Django templates,using tags you can perform programming logic like executing if statements and for loops.
+
+    {%  %}
+
+For more details
+
+    https://www.w3schools.com/django/django_template_tags.php
