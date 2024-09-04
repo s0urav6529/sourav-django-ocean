@@ -348,3 +348,18 @@ In html file we need to load the static, after that in head we need to link part
     <body>
         <img src = "{% static 'images/image_name.jpg' %}">
     </body>
+
+### Mastering in Template
+
+### URL namming
+
+    urlpattern = [
+        path('blog-all/', views.blog_all, name = 'blg_all'),
+        path('blog-details/', views.blog_details, name = 'blg_details'),
+        ..........
+    ]
+
+In href
+
+    href = {% url = 'blg_all' %}
+    href = {% url = 'blg_details' %}
