@@ -320,3 +320,25 @@ After create **STATIC_DIR** register in **STATICFILES_DIRS** list.
 
     STATIC_URL = 'static/'
     STATICFILES_DIRS = [ STATIC_DIR, ]
+
+#### How to use this static folder contents
+
+In html file we need to load the static, after that in head we need to link particular static file
+
+    <!DOCTYPE html>
+    {% load static %}   **load the static**
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title></title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="{% static 'style.css' %}" />   **link particular css file**
+    </head>
+    <body>
+
+        <h1>Hello, Deep learning</h1>
+
+        <script src="" async defer></script>
+    </body>
+    </html>
