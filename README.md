@@ -292,7 +292,7 @@ Major Template Filters in Django link.
 
 #### Tags
 
-In Django templates,using tags you can perform programming logic like executing if statements and for loops.
+In Django templates,using tags you can perform programming logic like executing **if** statements and **loops**.
 
     {%  %}
 
