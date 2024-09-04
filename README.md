@@ -333,7 +333,7 @@ In html file we need to load the static, after that in head we need to link part
         <title></title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="{% static 'style.css' %}" />   //link particular css file
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />   //link particular css file
     </head>
     <body>
 
@@ -346,5 +346,5 @@ In html file we need to load the static, after that in head we need to link part
 #### Load any image from static folder
 
     <body>
-        <img src = "{% static 'image_name.jpg' %}">
+        <img src = "{% static 'images/image_name.jpg' %}">
     </body>
