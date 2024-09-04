@@ -271,3 +271,8 @@ After complete register **TEMPLATE_DIR**. Create a folder **teacher** & a html p
 
     def machine(request) :
         return render(request,'teacher/course.html')
+
+### Django Template Language
+
+![Screenshot 2024-09-04 120701](https://github.com/user-attachments/assets/187bda9f-d4e9-4512-82db-a845c24435e1)
+![Screenshot 2024-09-04 120713](https://github.com/user-attachments/assets/aee309af-c455-4af4-a862-34009a822012)
