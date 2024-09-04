@@ -264,3 +264,10 @@ After create **TEMPLATE_DIR** register in TEMPLATES list.
             .....
         },
     ]
+
+### Render templates in view
+
+After complete register **TEMPLATE_DIR**. Create a folder **teacher** & a html page name **course**.After creating, we need to go in view of app & render.
+
+    def machine(request) :
+        return render(request,'teacher/course.html')
