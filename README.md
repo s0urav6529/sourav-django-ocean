@@ -342,3 +342,9 @@ In html file we need to load the static, after that in head we need to link part
         <script src="" async defer></script>
     </body>
     </html>
+
+#### Load any image from static folder
+
+    <body>
+        <img src = "{% static 'image_name.jpg' %}">
+    </body>
