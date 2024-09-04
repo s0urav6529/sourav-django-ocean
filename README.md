@@ -274,6 +274,15 @@ After complete register **TEMPLATE_DIR**. Create a folder **teacher** & a html p
 
 ### Django Template Language
 
+In html file, **dictionary** keys of views file works as **variables**
+
+    def course(request):
+        name = "History"
+        context = {'name': name}
+        return render(request, 'teacher/course.html', context)
+
+Now we can use this **name** key of dictonary key as variable in html file.
+
 #### Variables
 
 It associated with a context can be accessed by **{{}}**
