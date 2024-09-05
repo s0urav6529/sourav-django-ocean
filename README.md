@@ -275,7 +275,7 @@ Major Template Filters in Django link.
 
 In Django templates,using tags you can perform programming logic like executing **if** statements and **loops**.
 
-    {%  %}
+    {% tags %}
 
 For more details
 
@@ -391,10 +391,16 @@ To know how many models are in migrations phase :
 
     py manage.py showmigrations
 
-To convert this newly created model into sql query we need to make migrations :
+To convert this newly created model into sql query we need to make migrations : step 1
 
     py manage.py makemigrations
 
-This will generate a new migration file that contains the changes made to your models. You can then apply the migration using:
+If want to see the sql of any makemigrations model class:
+
+    py manage.py sqlmigrate <app_name> 0001
+
+Here **0001** means the first string of migration file before underline.
+
+Finally you can then apply the migration : step 2
 
     py manage.py migrate
