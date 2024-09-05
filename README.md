@@ -377,10 +377,24 @@ For creating a database table/model in django follow the rules...
     from django.db import models
 
     class Person(models.Model):
+
         name = models.CharField(max_length=100)
-        age = models.IntegerField()
+        slug = models.SlugField(max_length = 200)
+        text = models.TextField()
+
         phone = models.IntegerField(null=True)
         joined_date = models.DateField(null=True)
+        date_time= models.DateTimeField()
+
+        email = models.EmailField(max_length = 254)
+
+        file = models.FileField()
+        image = models.ImageField()
+
+        url = models.URLField(max_length = 200)
+
+        age = models.IntegerField()
+        status = models.SmallIntegerField()
 
     def __str__(self):
         return self.name
