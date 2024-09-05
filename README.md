@@ -434,3 +434,68 @@ After creating superuser, we can now register our created model's off app. Regis
     admin.site.register(model_name, model_nameAdmin)
 
 Here, replace **model_name** with appropiate model name
+
+### Form in Django
+
+For creating a form, Django provides forms class.Using forms class we can easily create our form according to need.
+
+    from django import forms
+
+    class TestingForm(forms.Form):
+
+        name = forms.CharField(
+            max_length=100,
+            label="Name",
+            widget=forms.TextInput(
+                attrs={'placehoder' : 'Enter your name'}
+            )
+        )
+
+        title = forms.CharField(
+            label='Title',
+            widget=forms.Select(
+                attrs={'placeholder': 'Select your title'}
+            ),
+        )
+
+        password = forms.CharField(
+            label='Password',
+            widget=forms.PasswordInput(attrs={'placeholder': 'Enter your password'})
+        )
+
+        email = forms.EmailField(
+            label='Email Address',
+            initial='sourav@gmail.com',
+            widget=forms.EmailInput(attrs={
+                'placeholder': 'Enter your email',
+                'readonly': 'readonly'
+            })
+        )
+
+        birth_date = forms.DateField(
+            required=False,
+            label='Date of Birth',
+            widget=forms.DateInput(attrs={'placeholder': 'YYYY-MM-DD'})
+        )
+
+        gender = forms.ChoiceField(
+            label='Gender',
+            widget=forms.RadioSelect
+        )
+
+        agree_to_terms = forms.BooleanField(
+            required=True,
+            label='Agree to Terms and Conditions',
+            widget=forms.CheckboxInput(attrs={'class': 'checkbox'})
+        )
+
+        bio = forms.CharField(
+            required=False,
+            label='Biography',
+            widget=forms.Textarea(attrs={'placeholder': 'Enter your biography', 'rows': 4, 'cols': 40})
+        )
+
+        hobbies = forms.MultipleChoiceField(
+            label='Hobbies',
+            widget=forms.SelectMultiple(attrs={'placeholder': 'Select your hobbies'})
+        )
