@@ -418,3 +418,19 @@ Here **0001** means the first string of migration file before underline.
 Finally you can then apply the migration : step 2
 
     py manage.py migrate
+
+### Create a superUser
+
+    py manage.py createsuperuser
+
+After creating superuser, we can now register our created model's off app. Register model in **app_name/admin.py** file.
+
+    from django.contrib import admin
+    from app_name.models import model_name
+
+    class model_nameAdmin(admin.ModelAdmin) :
+        list_display = ('id', 'name', 'grade', 'duration')
+
+    admin.site.register(model_name, model_nameAdmin)
+
+Here, replace **model_name** with appropiate model name
