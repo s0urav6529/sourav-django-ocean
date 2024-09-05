@@ -342,7 +342,7 @@ In href
 
 It basically works as a converter, where we just use the django model to CRUD the data from database. ORM converts the class into sql of database & gives us results.
 
-![Screenshot 2024-09-05 110611](https://github.com/user-attachments/assets/7aa57660-3f73-493f-a981-3157433eddf6)
+![Screenshot 2024-09-05 110941](https://github.com/user-attachments/assets/28db322d-80b2-42c6-a2ef-594d1b2cbee5)
 
 ### Configure the Database Settings
 
