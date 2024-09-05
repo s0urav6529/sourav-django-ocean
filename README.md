@@ -382,8 +382,8 @@ For creating a database table/model in django follow the rules...
         phone = models.IntegerField(null=True)
         joined_date = models.DateField(null=True)
 
-        def __str__(self):
-            return self.name
+    def __str__(self):
+        return self.name
 
 The **str** method is used to display the name of the person instead of its object ID.
 
