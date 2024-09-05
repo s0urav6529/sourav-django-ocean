@@ -56,24 +56,17 @@ Unix/MacOS:
 
 ### Django Create Project
 
-    django-admin startproject my_first_project
+    django-admin startproject my_project
 
-Django creates a **my_first_project** folder on my computer, with this content:
+Django creates a **my_project** folder on my computer, with this content:
 
-    my_tennis_club
-        manage.py
-        my_tennis_club/
-            __init__.py
-            asgi.py
-            settings.py
-            urls.py
-            wsgi.py
+![Screenshot 2024-09-05 103824](https://github.com/user-attachments/assets/38654598-2f89-4af6-8a46-957bc37f828a)
 
 Here, we have a manage.py file.Which is use for run this project in the webserver.
 
 #### Run the Django Project
 
-Navigate to the /**my_first_project** folder and execute this command in the command prompt:
+Navigate to the /**my_project** folder and execute this command in the command prompt:
 
     py manage.py runserver
 
@@ -85,9 +78,9 @@ You should be in the **project folder** to make an app for the project.Then run 
 
 Django creates a folder named **teacher** in my project, with this content:
 
-    my_first_project
+    my_project
         manage.py
-        my_first_project/
+        my_project/
         teacher/
             migrations/
                 __init__.py
@@ -135,7 +128,7 @@ Again go to **student/views.py** file & define functions
 
 ### Create url to use views from apps
 
-Now go to **my_first_project/url.py** file register those views path
+Now go to **my_project/url.py** file register those views path
 
 #### Type 1 : rename views
 
@@ -185,7 +178,7 @@ In **student.urls.py** file
         path('2/', views.subject2),
     ]
 
-In **my_first_project.urls.py** file
+In **my_project.urls.py** file
 
     from django.urls import path, include
 
@@ -248,7 +241,7 @@ This will generate a new migration file that contains the changes made to your m
 
 ### Templates
 
-Template folder always be in outer folder of **my_first_project/templates/**. After creating this folder, we need to register this folder in the inner folder of **my_first_project/settings.py**. Then write this below **BASE_DIR**
+Template folder always be in outer folder of **my_project/templates/**. After creating this folder, we need to register this folder in the inner folder of **my_project/settings.py**. Then write this below **BASE_DIR**
 
     import os
 
@@ -311,7 +304,7 @@ For more details
 
 #### Static Folder
 
-Django use static folder for (css,js & image etc). So similarly as template folder, need to crate a folder static folder in outer **my_first_project/static**.
+Django use static folder for (css,js & image etc). So similarly as template folder, need to crate a folder static folder in outer **my_project/static**.
 After that we need to register this folder in the **settings.py** file.
 
     STATIC_DIR = os.path.join(BASE_DIR,'static')
