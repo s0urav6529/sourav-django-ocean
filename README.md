@@ -387,7 +387,11 @@ For creating a database table/model in django follow the rules...
 
 The **str** method is used to display the name of the person instead of its object ID.
 
-To use this model, you need to create a new migration:
+To know how many models are in migrations phase :
+
+    py manage.py showmigrations
+
+To convert this newly created model into sql query we need to make migrations :
 
     py manage.py makemigrations
 
