@@ -441,19 +441,39 @@ For creating a form, Django provides forms class.Using forms class we can easily
 
     from django import forms
 
-    class TestingForm(forms.Form):
+    TITLE_CHOICES = [
+        ('MR', 'Mr.'),
+        ('MS', 'Ms.'),
+        ('MRS', 'Mrs.'),
+    ]
 
+    GENDER_CHOICES = [
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('O', 'Other'),
+    ]
+
+    HOBBY_CHOICES = [
+        ('reading', 'Reading'),
+        ('writing', 'Writing'),
+        ('travelling', 'Travelling'),
+        ('cooking', 'Cooking'),
+    ]
+
+
+    class TestingForm(forms.Form):
         name = forms.CharField(
             max_length=100,
             label="Name",
             widget=forms.TextInput(
-                attrs={'placehoder' : 'Enter your name'}
+                attrs={'placeholder' : 'Enter your name'}
             )
         )
 
         title = forms.CharField(
             label='Title',
             widget=forms.Select(
+                choices=TITLE_CHOICES,
                 attrs={'placeholder': 'Select your title'}
             ),
         )
@@ -480,6 +500,7 @@ For creating a form, Django provides forms class.Using forms class we can easily
 
         gender = forms.ChoiceField(
             label='Gender',
+            choices=GENDER_CHOICES,
             widget=forms.RadioSelect
         )
 
@@ -496,6 +517,7 @@ For creating a form, Django provides forms class.Using forms class we can easily
         )
 
         hobbies = forms.MultipleChoiceField(
+            choices=HOBBY_CHOICES,
             label='Hobbies',
-            widget=forms.SelectMultiple(attrs={'placeholder': 'Select your hobbies'})
+            widget=forms.CheckboxSelectMultiple
         )
