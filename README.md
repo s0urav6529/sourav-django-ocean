@@ -60,6 +60,30 @@ A well-organized project structure typically follows this hierarchy:
 
 ![Screenshot 2024-09-05 104124](https://github.com/user-attachments/assets/e5d6a5e4-3757-4c79-b770-73f266e7c178)
 
+#### project_name:
+
+The root directory of your project.
+
+#### project_name/project_name:
+
+This inner directory holds core project settings and configuration.
+
+#### app1, app2:
+
+These are the individual apps you create within the project.
+
+#### static:
+
+Houses static files like CSS, JavaScript, and images.
+
+#### media:
+
+Stores user-uploaded files.
+
+#### templates:
+
+Contains HTML templates.
+
 ### Django Create Project
 
     django-admin startproject my_project
