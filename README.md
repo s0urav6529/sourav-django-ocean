@@ -218,57 +218,6 @@ In **my_project.urls.py** file
         path('student/', include('student.urls')),
     ]
 
-### Configure the Database Settings
-
-To configure the database settings in your Django project. Open the settings.py file in your project directory and find the DATABASES section. You should see something like this:
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-
-Suppose i want to connect database **mysql**. So i need to change according to this...
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': '<database_name>',
-            'USER': 'root',
-            'PASSWORD': '',
-            'HOST': 'localhost',
-            'PORT': '3306',
-        }
-    }
-
-Here, replace database_name, database_user, and database_password with your own values.
-
-### Create Database Tables/Models
-
-For creating a database table/model in django follow the rules...
-
-    from django.db import models
-
-    class Person(models.Model):
-        name = models.CharField(max_length=100)
-        age = models.IntegerField()
-        phone = models.IntegerField(null=True)
-        joined_date = models.DateField(null=True)
-
-        def __str__(self):
-            return self.name
-
-The **str** method is used to display the name of the person instead of its object ID.
-
-To use this model, you need to create a new migration:
-
-    py manage.py makemigrations
-
-This will generate a new migration file that contains the changes made to your models. You can then apply the migration using:
-
-    py manage.py migrate
-
 ### Templates
 
 Template folder always be in outer folder of **my_project/templates/**. After creating this folder, we need to register this folder in the inner folder of **my_project/settings.py**. Then write this below **BASE_DIR**
@@ -386,3 +335,62 @@ In href
 
     href = {% url = 'blg_all' %}
     href = {% url = 'blg_details' %}
+
+### ORM (Object Relational Mapper) & it's work
+
+![Screenshot 2024-09-05 110423](https://github.com/user-attachments/assets/519ef3ef-2dba-4475-b532-9c293ee76157)
+
+It basically works as a converter, where we just use the django model to CRUD the data from database. ORM converts the class into sql of database & gives us results.
+
+![Screenshot 2024-09-05 110611](https://github.com/user-attachments/assets/7aa57660-3f73-493f-a981-3157433eddf6)
+
+### Configure the Database Settings
+
+To configure the database settings in your Django project. Open the settings.py file in your project directory and find the DATABASES section. You should see something like this:
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+
+Suppose i want to connect database **mysql**. So i need to change according to this...
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': '<database_name>',
+            'USER': 'root',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'PORT': '3306',
+        }
+    }
+
+Here, replace database_name, database_user, and database_password with your own values.
+
+### Create Database Tables/Models
+
+For creating a database table/model in django follow the rules...
+
+    from django.db import models
+
+    class Person(models.Model):
+        name = models.CharField(max_length=100)
+        age = models.IntegerField()
+        phone = models.IntegerField(null=True)
+        joined_date = models.DateField(null=True)
+
+        def __str__(self):
+            return self.name
+
+The **str** method is used to display the name of the person instead of its object ID.
+
+To use this model, you need to create a new migration:
+
+    py manage.py makemigrations
+
+This will generate a new migration file that contains the changes made to your models. You can then apply the migration using:
+
+    py manage.py migrate
