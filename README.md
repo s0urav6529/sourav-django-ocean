@@ -54,6 +54,12 @@ Unix/MacOS:
 
     pip install 'django<4'
 
+### Directory Hierarchy
+
+A well-organized project structure typically follows this hierarchy:
+
+![Screenshot 2024-09-05 104124](https://github.com/user-attachments/assets/e5d6a5e4-3757-4c79-b770-73f266e7c178)
+
 ### Django Create Project
 
     django-admin startproject my_project
