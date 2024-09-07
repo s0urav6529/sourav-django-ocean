@@ -237,12 +237,26 @@ After create **TEMPLATE_DIR** register in TEMPLATES list.
         },
     ]
 
-### Render templates in view
+### Render templates in function base view
 
 After complete register **TEMPLATE_DIR**. Create a folder **teacher** & a html page name **course**.After creating, we need to go in view of app & render.
 
     def machine(request) :
         return render(request,'teacher/course.html')
+
+### Render templates in class base view
+
+    from django.views import View
+
+    class machine(View):
+        def get(self, request):
+            return render(request, 'teacher/course.html')
+
+#### for class base view we need to little change in url pattern.
+
+    urlpatterns = [
+        path('class_base/', views.machine.as_view()),
+    ]
 
 ### Django Template Language
 
