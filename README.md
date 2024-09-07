@@ -437,6 +437,10 @@ Finally you can then apply the migration : step 2
 
     py manage.py createsuperuser
 
+### Change password of superUser
+
+    py manage.py changepassword <user_name>
+
 After creating superuser, we can now register our created model's off app. Register model in **app_name/admin.py** file.
 
     from django.contrib import admin
