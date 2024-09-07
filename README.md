@@ -384,6 +384,10 @@ Suppose i want to connect database **mysql**. So i need to change according to t
 
 Here, replace database_name, database_user, and database_password with your own values.
 
+Install mysql client in **env**
+
+    pip install mysqlclient
+
 ### Create Database Tables/Models
 
 For creating a database table/model in django follow the rules...
