@@ -1,0 +1,1 @@
+from .friend_form import FriendForm
