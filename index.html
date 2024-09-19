@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-<title>Page Name</title>
+<title>Page title</title>
 {% endblock title %}
 
 {% block content %}
@@ -69,8 +69,8 @@
 
                 $("#table_id tbody").prepend(
                     `<tr>
-                    <td>${fields["first_name"] || ""}</td>
-                    <td>${fields["last_name"] || ""}</td>
+                    <td>${fields["first_name"] || "N/A"}</td>
+                    <td>${fields["last_name"] || "N/A"}</td>
                     </tr>`
                 )
             },
