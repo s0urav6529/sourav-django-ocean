@@ -1,1 +1,1 @@
-from .friend_form import FriendForm
+from .friend import FriendForm

@@ -3,4 +3,5 @@ from django import forms
 
 
 class FriendForm(forms.ModelForm):
-    pass
+    model = Friend
+    fields = '__all__'
