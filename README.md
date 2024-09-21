@@ -304,7 +304,7 @@ After that we need to register this folder in the **settings.py** file.
 
 After create **STATIC_DIR** register in **STATICFILES_DIRS** list.
 
-    STATIC_URL = 'static/'
+    STATIC_URL = '/static/'
     STATICFILES_DIRS = [ STATIC_DIR, ]
 
 #### How to use this static folder contents
