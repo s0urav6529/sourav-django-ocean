@@ -4,12 +4,8 @@ from django.urls import path
 from .views import Home, Sign_in
 
 urlpatterns = [
-    # GET and POST requests for the Home view
-    path('friend/', Home.as_view(), name='home'),
-
-    # PUT request for updating a friend (uses <friend_id>)
-    path('friend/<int:friend_id>/', Home.as_view(), name='friend_edit'),
-
-    # DELETE request for deleting a friend (uses <friend_id>)
-    path('friend/delete/<int:friend_id>/', Home.as_view(), name='friend_delete'),
+    path('', Home.as_view(), name='home_list'),
+    path('add/', Home.as_view(), name='friend_add'),
+    path('edit/<int:id>/', Home.as_view(), name='friend_edit'),
+    path('delete/<int:id>/', Home.as_view(), name='friend_delete'),
 ]
