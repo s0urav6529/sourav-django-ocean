@@ -543,3 +543,43 @@ For creating a form, Django provides forms class.Using forms class we can easily
             label='Hobbies',
             widget=forms.CheckboxSelectMultiple
         )
+
+
+### Faker in django
+
+Faker is a Python library developed by François Best that generates large volumes of high-quality fake data. It is designed to produce realistic data in various formats, including names, addresses, phone numbers, dates, and more. With Faker, developers can easily populate databases and create realistic test environments without the risk of using sensitive or real data.
+
+##### Install with pip:
+
+    pip install Faker
+
+Create a **seeder.py** file in a perticular app, suppose in **app/seeder.py**
+
+    seeder.py file
+
+    from .models import Friend
+    from faker import Faker
+
+    fake = Faker()
+
+    def seed_friend(n):
+        for i in range(n):
+            Friend.objects.create(
+                nick_name=fake.first_name(),  # Assuming you want the nickname to be a fake first name
+                first_name=fake.first_name(),
+                last_name=fake.last_name()
+            )
+
+After creating go to python shell.
+
+    py manage.py shell
+
+    from app.seeder import *    //access the seeder from particular app
+    seed_friend(10) // pass the value of n
+
+    from app.models import *
+    Friend.objects.all()
+
+    Friend.objects.all().count()
+
+    
