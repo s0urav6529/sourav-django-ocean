@@ -89,7 +89,7 @@ Contains HTML templates.
 
 ### Django Create Project
 
-Here use '.'so that no other extra folder of my_project create.
+Here use '.' so that no other extra folder of my_project create.
 
     django-admin startproject my_project .
 
