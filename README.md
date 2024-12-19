@@ -661,5 +661,8 @@ So, we need to ignore it and have to apply only those specific route where we wa
         path('customer/order', is_customer(MyView.as_view()), name='customer_order')
     ]
 
+For multiple middleware we can use middleware chain.
 
-
+    urlpatterns = [
+        path('customer/order', is_login(is_customer(is_premium(MyView.as_view()))), name='customer_order'),
+    ]
