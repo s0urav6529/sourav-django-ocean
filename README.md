@@ -587,4 +587,80 @@ After creating go to python shell.
 
     Friend.objects.all().count()
 
+### Decorator
+
+A decorator in Python is a design pattern that allows you to modify or extend the behavior of a function or class method without altering its structure. It is a higher-order function that takes another function (or method) as an argument and returns a new function that typically adds some functionality to the original one.
+
+### Middleware
+
+Middleware in Django is a framework of hooks into the request/response processing of a Django application.
+
+In 'app_name/middleware' file create a custom middleware.
+
+
+    from django.shortcuts import redirect
+
+    def is_customer(get_response):
     
+        def middleware(request):
+
+            print(f'middleware')
+
+            if not request.session.get('customer')
+                return redirect('login_page')
+
+            response = get_response(request)
+            return response
+
+        return middleware
+
+After creating the middleware, if we declear the middleware int the 'setting.py' middleware array. Then it will apply to all of the route of the project.
+
+
+    MIDDLEWARE = [
+        'django.middleware.security.SecurityMiddleware',
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.middleware.common.CommonMiddleware',
+        'django.middleware.csrf.CsrfViewMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessageMiddleware',
+        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        
+        //created middleware
+        'myapp.middleware.is_customer'
+    ]
+
+So, we need to ignore it and have to apply only those specific route where we want to use. For this we have some ways.
+
+##### Using method decorator in View
+
+    from django.utils.decorators import method_decorator
+    from myapp.middleware import is_customer
+
+    class MyView(View):
+
+        @method_decorator(is_customer)
+
+        def get(self, request) :
+        
+            // code ....
+        
+        end_of_get
+
+    end_of_class
+
+
+##### Using method decorator in Url_mapper
+
+    from django.urls import path
+    from . import views
+    from .middleware import is_customer
+
+    app_name = 'myapp'
+
+    urlpatterns = [
+        path('customer/order', is_customer(MyView.as_view()), name='customer_order')
+    ]
+
+
+
