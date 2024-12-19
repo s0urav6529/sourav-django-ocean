@@ -640,7 +640,6 @@ So, we need to ignore it and have to apply only those specific route where we wa
     class MyView(View):
 
         @method_decorator(is_customer)
-
         def get(self, request) :
         
             // code ....
