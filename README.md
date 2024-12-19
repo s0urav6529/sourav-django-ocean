@@ -593,7 +593,7 @@ A decorator in Python is a design pattern that allows you to modify or extend th
 
 ### Middleware
 
-Middleware in Django is a framework of hooks into the request/response processing of a Django application.
+Middleware in Django is a framework of hooks into the request/response processing of a Django application.There are 2 types of middleware[function & class based].Middlewares are callables.
 
 In 'app_name/middleware' file create a custom middleware.
 
