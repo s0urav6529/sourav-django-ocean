@@ -8,27 +8,30 @@ Django basically follows **MVT** structure.
 
 ![Screenshot 2024-09-03 140137](https://github.com/user-attachments/assets/688cd941-94a2-4497-8403-884a64018bf5)
 
+
 ### Virtual Environment
+
+Create a separate folder for every Django Project.
 
 It is suggested to have a dedicated virtual environment for each Django project, and one way to manage a virtual environment is venv, which is included in Python.It's better to have a separate **venv** for every particular project.
 
 Windows:
 
-    py -m venv myworld
+    py -m venv myenv
 
 Unix/MacOS:
 
-    python -m venv myworld
+    python -m venv myenv
 
 Then you have to activate the environment, by typing this command:
 
 Windows:
 
-    myworld\Scripts\activate
+    myenv\Scripts\activate
 
 Unix/MacOS:
 
-    source myworld/bin/activate
+    source myenv/bin/activate
 
 you can deactivate your virtual environment by typing the following command into your terminal or command line:
 
