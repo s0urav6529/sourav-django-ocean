@@ -33,7 +33,7 @@ Unix/MacOS:
 
     source myenv/bin/activate
 
-you can deactivate your virtual environment by typing the following command into your terminal or command line:
+If, you can deactivate your virtual environment after end of work:
 
     deactivate
 
@@ -89,7 +89,7 @@ Contains HTML templates.
 
 ### Django Create Project
 
-    django-admin startproject my_project
+    django-admin startproject my_project .
 
 Django creates a **my_project** folder on my computer, with this content:
 
