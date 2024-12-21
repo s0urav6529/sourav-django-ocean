@@ -701,18 +701,24 @@ So, we need to ignore it and have to apply only those specific route where we wa
 ##### Using method decorator in View
 
     from django.utils.decorators import method_decorator
-    from myapp.middleware import is_customer
+    from myapp.middleware import is_customer, middleware_2, middleware_3,...
 
     class MyView(View):
 
         @method_decorator(is_customer)
         def get(self, request) :
         
-            // code ....
+            # business logic...
         
-        end_of_get
+        @method_decorator([is_customer, middleware_2, middleware_3,...])
+        def post(self, request) :
 
-    end_of_class
+            # business logic...
+
+        @method_decorator([is_customer, middleware_2])
+        def delete(self, request) :
+
+            # business logic...
 
 
 ##### Using method decorator in Url_mapper
