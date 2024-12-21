@@ -594,25 +594,91 @@ A decorator in Python is a design pattern that allows you to modify or extend th
 ### Middleware
 
 Middleware in Django is a framework of hooks into the request/response processing of a Django application.
+For more details...
 
-In 'app_name/middleware' file create a custom middleware.
+    https://python.plainenglish.io/building-custom-middleware-in-django-a-comprehensive-guide-378edfebdfe5
 
+    https://medium.com/scalereal/everything-you-need-to-know-about-middleware-in-django-2a3bd3853cd6
+
+    https://www.scoutapm.com/authentication-and-authorization-using-middleware-in-django/
+
+In 'app_name/middleware' file create a custom middleware. For more details...
+
+###### function base middleware
 
     from django.shortcuts import redirect
 
     def is_customer(get_response):
+        # One-time configuration and initialization.
     
         def middleware(request):
-
-            print(f'middleware')
-
+            #Code to be executed for each request before
+            
+            # business logic
             if not request.session.get('customer')
                 return redirect('login_page')
 
+            # the view (and later middleware) are called.
             response = get_response(request)
+
+            # Code to be executed for each request/response after
+            # the view is called.
             return response
 
         return middleware
+
+###### class base middleware
+
+    class SimpleCustomMiddleware:
+
+        def __init__(self, get_response):
+            self.get_response = get_response
+            # One-time configuration and initialization.
+
+        def __call__(self, request):
+            #Code to be executed for each request before
+            
+            # business logic
+            if not request.session.get('customer')
+                return redirect('login_page')
+
+            # the view (and later middleware) are called.
+            response = self.get_response(request)
+
+            # Code to be executed for each response after
+            # the view is called.
+            return response
+
+        # Optional hooks:
+        def process_view(self, request, view_func, view_args, view_kwargs):
+            # Called just before Django calls the view.
+            # Return either None or HttpResponse.
+
+        def process_exception(self, request, exception):
+            # Called for the response if the view raises an exception.
+            # Return either None or HttpResponse.
+
+        def process_template_response(self, request, response):
+            # Called for template responses.
+            # Return a response.
+
+##### Middleware hooks
+
+
+    __init__: Runs once when the server starts.
+
+    __call__: The most important function; this is where you interact with requests and responses.
+
+    process_view: Called just before the view is executed.
+
+    process_exception: Called when a view raises an exception.
+
+    process_template_response: Called just before the response is returned by the view.
+
+    process_response: Called after the view has finished and is sending the response.
+
+
+
 
 After creating the middleware, if we declear the middleware int the 'setting.py' middleware array. Then it will apply to all of the route of the project.
 
